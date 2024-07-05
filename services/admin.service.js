@@ -14,4 +14,18 @@ let findAdminByEmail = (email) => {
   return adminSchema.findOne({ email });
 };
 
-module.exports = { register, getAllAdmin, findAdminByEmail };
+let findByIdAndDelete = (id) => {
+  return adminSchema.findByIdAndDelete(id);
+};
+
+let findByIdAndUpdate = (id, body) => {
+  return adminSchema.findByIdAndUpdate(id, body);
+};
+
+module.exports = {
+  register,
+  getAllAdmin,
+  findAdminByEmail,
+  findByIdAndDelete,
+  findByIdAndUpdate,
+};
