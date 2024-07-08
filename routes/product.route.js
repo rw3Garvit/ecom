@@ -1,5 +1,5 @@
 let express = require("express");
-const { userController } = require("../controllers");
+const { productController } = require("../controllers");
 let route = express.Router();
 
 route.get("/get", (req, res) => {
@@ -8,6 +8,6 @@ route.get("/get", (req, res) => {
   });
 });
 
-route.post("/register", userController.register);
+route.post("/add", productController.addProduct);
 
 module.exports = route;
