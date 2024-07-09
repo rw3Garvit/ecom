@@ -10,4 +10,5 @@ route.get("/get", (req, res) => {
 
 route.post("/register", userController.register);
 
+
 module.exports = route;
