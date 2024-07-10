@@ -16,8 +16,14 @@ let getUser = async (req, res) => {
 let register = async (req, res) => {
   try {
     console.log(req.body);
+    let { path } = req.file;
 
     let body = req.body;
+
+    let newBody = {
+      ...body,
+      profile: path,
+    };
 
     let duplicate = await adminService.findAdminByEmail(body.email);
 
@@ -25,7 +31,7 @@ let register = async (req, res) => {
       throw new Error("admin already regsiterd");
     }
 
-    let admin = await adminService.register(body);
+    let admin = await adminService.register(newBody);
 
     console.log(admin, "admin result");
 

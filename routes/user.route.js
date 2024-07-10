@@ -1,5 +1,6 @@
 let express = require("express");
 const { userController } = require("../controllers");
+const upload = require("../middleware/upload");
 let route = express.Router();
 
 route.get("/get", (req, res) => {
@@ -9,6 +10,5 @@ route.get("/get", (req, res) => {
 });
 
 route.post("/register", userController.register);
-
 
 module.exports = route;
